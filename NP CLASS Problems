@@ -1,9 +1,20 @@
 NP problems:- 
-          NP is the set of all the decision problems that are solvable by non - deterministic algorithms in polynomial time.
+         
+         NP is the set of all the decision problems that are solvable by non - deterministic algorithms in polynomial time.
           Since deterministic algorithms are just the special case of non - deterministic ones, so we can conclude that P is the subset of NP.
+
 NP Hard problems:-
-          Any given problem X acts as NP-Hard only if there exists a problem Y that is NP-Complete. Here, problem Y becomes reducible to problem X in a polynomial time.
+          
+	Any given problem X acts as NP-Hard only if there exists a problem Y that is NP-Complete. Here, problem Y becomes reducible to problem X in a polynomial time.
+
 NP Complete problems:-
-           Any given problem X acts as NP-Complete when there exists an NP problem Y- so that the problem Y gets reducible to the problem X in a polynomial line. 
+           
+	 Any given problem X acts as NP-Complete when there exists an NP problem Y- so that the problem Y gets reducible to the problem X in a polynomial line. 
            This means that a given problem can only become NP-Complete if it is a part of NP-Hard as well as NP Problems.
           
+
+Algorithm to Prove That a Problem Is NP-Complete:-
+	
+	NP-Complete problems are the ones that are both in np and must be np hard.
+	
+
