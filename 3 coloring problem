@@ -1,1 +1,47 @@
  Prove that the 3-coloring problem is NP Complete.
+
+
+
+Graph 3-colouring is NP-Complete
+3-Coloring is NP-Complete if it is NP and NP-hard, here are the proofs:
+
+
+Prove it’s a NP problem:
+
+It could be verified in polynomial time.
+Define verifier VF for 3-color problem:
+
+VF : On input <G, c>: (G is the graph, c is the list of colors, in the same order with vertices)
+1. Check c has only 3 colors. [O(V)]
+2. Color each vertices with c. [O(V)]
+3. For each vertex, check it’s color is different than neighbours.
+a. Using adjacency list O(V+E )
+b. Using adjacency matrix/edge list O(V^2)
+4. Accept if (3) is valid for all vertices, otherwise reject.
+The overall complexity is polynomial time, so 3-coloring is a NP problem.
+
+
+
+Prove it’s NP hard:
+By giving a polynomial time reduction from 3SAT to 3-Coloring:
+In order to do a reduction from 3-SAT to 3-Colouring. Given φ is an instance of 3-SAT, which
+has n variables x , , ... and m clauses , … . Graph G is 3-colorable, iff φ is 1 x2 xn C1 C2 Cm
+satisfiable. First, we will build the truth assignment for variables x , , ... via the colour of 1 x2 xn
+vertexes. Then, we need to find some to capture the satisfiability of clause Cm in φ.
+To achieve these two missions, we build a triangle in G with three vertexes {True, False, Base},
+which match the three colours {red, green, blue}. For every variable xi
+, we add two nodes v or i
+v and connect to the vertex coloured Base, which shows in the figure following. In this case, if
+i
+G is 3-colourable, we can get the truth assignment to v no matter or is coloured True
+The next step is to get the satisfiability of φ. Take any clause C = (a ∨ b ∨ c) in , to express i G
+the function OR, we will use a graph to build a gadget whose function likes an OR gate
+we want the output node is coloured red, which means that output is True if C is i
+satisfied, or the output node will be coloured green which represents False. In this graph, we
+can simply verify that if variables a, b, c are coloured False, then the output node ( a ∨ b ∨ c )
+will be coloured False. When no matter which of the input node is coloured True, the output will
+be True. The final step is to connect the output to the Base node and False node,
+
+
+
+
