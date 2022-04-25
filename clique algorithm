@@ -1,3 +1,76 @@
 clique algorithm:-
  In Clique, every vertex is directly connected to another vertex, and the number of vertices in the Clique represents the Size of Clique.
+ A clique in a graph is a set of vertices where each vertex shares an edge with every other vertex. Thus, a clique in a graph is a subgraph which is a complete graph.
+Problem: Given a graph G(V, E) and an integer K, the problem is to determine if the graph contains a clique of size K.
  
+ If we show :-
+ 3CNF ≤ρ Clique
+Clique ≤ρ 3CNF≤SAT
+Clique ϵ NP
+then we can say its a np complete problem 
+
+
+
+2)3CNF ≤ρ Clique
+Proof:-For the successful conversion from 3CNF to Clique, you have to follow the two steps:-
+
+Draw the clause in the form of vertices, and each vertex represents the literals of the clauses.
+
+They do not complement each other
+They don't belong to the same clause
+In the conversion, the size of the Clique and size of 3CNF must be the same, and you successfully converted 3CNF into Clique within the polynomial time
+Clique ≤ρ 3CNF
+Proof: - As you know that a function of K clause, there must exist a Clique of size k. 
+It means that P variables which are from the different clauses can assign the same value (say it is 1).
+By using these values of all the variables of the CLIQUES, you can make the value of each clause in the function is equal to 1
+
+Example: - You have a Boolean function in 3CNF:-
+
+(X+Y+Z) (X+Y+Z') (X+Y'+Z)
+
+After Reduction/Conversion from 3CNF to CLIQUE, you will get P variables such as: - x +y=1, x +z=1 and x=1
+
+Put the value of P variables in equation (i)
+
+1+1+0)(1+0+0)(1+0+1)
+
+(1)(1)(1)=1 output verified
+
+
+
+
+
+
+
+
+#its np problem or not
+
+If any problem is in NP, then, given a ‘certificate’, which is a solution to the problem and an instance of the problem (a graph G and a positive integer K, in this case), 
+we will be able to verify (check whether the solution given is correct or not) the certificate in polynomial time.
+The certificate is a subset V’ of the vertices, which comprises the vertices belonging to the clique. 
+We can validate this solution by checking that each pair of vertices belonging to the solution are adjacent, 
+by simply verifying that they share an edge with each other. This can be done in polynomial time, that is O(V +E) using the following strategy for graph G(V, E):
+
+
+flag=true
+For every pair {u, v} in the subset V’:
+    Check that these two
+         vertices {u, v} share an edge
+    If there is no edge,
+      set flag to false and break
+If flag is true:
+    Solution is correct
+Else:
+    Solution is incorrect 
+    
+    #its time reducible or not
+    
+     We have to check if there exists a clique of size k in the graph. Hence, verifying if number of nodes in S equals k, takes O(1) time.
+     Verifying whether each vertex has an out-degree of (k-1) takes O(k2) time. (Since in a complete graph, each vertex is connected to every other vertex through an edge.
+     Hence the total number of edges in a complete graph = kC2 = k*(k-1)/2 ).
+     Therefore, to check if the graph formed by the k nodes in S is complete or not, it takes O(k2) = O(n2) time (since k<=n, where n is number of vertices in G).
+     
+     
+     
+     
+     
